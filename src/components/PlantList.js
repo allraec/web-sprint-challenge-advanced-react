@@ -6,6 +6,7 @@ export default class PlantList extends Component {
 
   constructor() {
     super();
+    //state initialized
     this.state = {
       plants: []
     }
@@ -16,6 +17,7 @@ export default class PlantList extends Component {
   //   - set the returned plants array to this.state.plants
 
   componentDidMount(){
+    //fetches data from server and sets it as state.
     axios.get('http://localhost:3333/plants')
       .then(res => {
         this.setState({...this.state, plants: res.data});
